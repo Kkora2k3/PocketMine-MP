@@ -1036,7 +1036,15 @@ class Server{
 			$this->dataPath = realpath($dataPath) . DIRECTORY_SEPARATOR;
 			$this->pluginPath = realpath($pluginPath) . DIRECTORY_SEPARATOR;
 
-			$this->logger->info("Loading pocketmine.yml...");
+			$this->logger->info("\n
+		   §a» §ePocketMine§f [§bRe§f]§a by §3StarSan's §flà 1 bản làm lại của§e PocketMine-MP, code lại bởi§b Kora§e và§b Mizento§f.
+		   §a» §bPhiên bản: §63.5.x dev
+		   §a» §cMCPE Client có thể dùng: §d1.9.x
+		   §a» §dTham gia tại §eS§6t§4a§cr§4V§5N§dP§bE§a nhé!
+		   §a» §6Các link bạn có thể đến: 
+		   §a» §bFacebook§a của mình:§f https://facebook.com/dang.rvg.2003
+		   §a» §fYou§cTube§a của mình:§f https://bit.ly/KoraVNYT
+		   \n§a» §fLoading pocketmine.yml...");
 			if(!file_exists($this->dataPath . "pocketmine.yml")){
 				$content = file_get_contents(\pocketmine\RESOURCE_PATH . "pocketmine.yml");
 				if(\pocketmine\IS_DEVELOPMENT_BUILD){
@@ -1046,7 +1054,7 @@ class Server{
 			}
 			$this->config = new Config($this->dataPath . "pocketmine.yml", Config::YAML, []);
 
-			$this->logger->info("Loading server properties...");
+			$this->logger->info("§a» §fLoading server properties...");
 			$this->properties = new Config($this->dataPath . "server.properties", Config::PROPERTIES, [
 				"motd" => \pocketmine\NAME . " Server",
 				"server-port" => 19132,
